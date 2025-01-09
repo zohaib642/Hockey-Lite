@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ns6a2xtxjrqc"]
+
+[ext_resource type="PackedScene" uid="uid://d4d73lqru04sr" path="res://scenes/puck_1.tscn" id="1_xsvfw"]
+
+[node name="map" type="Node2D"]
+
+[node name="puck1" parent="." instance=ExtResource("1_xsvfw")]
+position = Vector2(613, 154)
