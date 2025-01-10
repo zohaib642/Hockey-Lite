@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbee854v75psr"]
+
+[ext_resource type="Texture2D" uid="uid://byjn7kbkamoxh" path="res://AIR HOCKEY/3.png" id="1_cm45a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1nn6"]
+radius = 260.094
+
+[node name="pdl2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, -290)
+texture = ExtResource("1_cm45a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -291)
+shape = SubResource("CircleShape2D_e1nn6")

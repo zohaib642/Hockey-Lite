@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oi2o"]
 radius = 109.115
 
-[node name="puck1" type="CharacterBody2D"]
+[node name="pdl1" type="CharacterBody2D"]
 position = Vector2(64, -259)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

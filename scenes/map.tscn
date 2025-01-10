@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=3 format=3 uid="uid://ns6a2xtxjrqc"]
 
 [ext_resource type="PackedScene" uid="uid://d4d73lqru04sr" path="res://scenes/puck_1.tscn" id="1_xsvfw"]
+[ext_resource type="PackedScene" uid="uid://dbee854v75psr" path="res://pdl_2.tscn" id="2_ka7vb"]
 
 [node name="map" type="Node2D"]
 
 [node name="paddle1" parent="." instance=ExtResource("1_xsvfw")]
-position = Vector2(613, 154)
+position = Vector2(243, 183)
+
+[node name="pdl2" parent="." instance=ExtResource("2_ka7vb")]
+position = Vector2(936, 456)
+scale = Vector2(-0.44, 0.439999)
