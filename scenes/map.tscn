@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=5 format=3 uid="uid://ns6a2xtxjrqc"]
 
-[ext_resource type="PackedScene" uid="uid://d4d73lqru04sr" path="res://scenes/puck_1.tscn" id="1_xsvfw"]
-[ext_resource type="PackedScene" uid="uid://dbee854v75psr" path="res://pdl_2.tscn" id="2_ka7vb"]
+[ext_resource type="Texture2D" uid="uid://cd1fxpuc7wmeu" path="res://AIR HOCKEY/2.png" id="1_ag4oi"]
+[ext_resource type="Script" path="res://scenes/move.gd" id="2_tx3be"]
+[ext_resource type="Texture2D" uid="uid://byjn7kbkamoxh" path="res://AIR HOCKEY/3.png" id="3_7qc5p"]
+[ext_resource type="Script" path="res://scenes/move2.gd" id="4_l45tf"]
 
 [node name="map" type="Node2D"]
 
-[node name="paddle1" parent="." instance=ExtResource("1_xsvfw")]
-position = Vector2(243, 183)
+[node name="leftPdl" type="Sprite2D" parent="."]
+position = Vector2(355, 965)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_ag4oi")
+script = ExtResource("2_tx3be")
 
-[node name="pdl2" parent="." instance=ExtResource("2_ka7vb")]
-position = Vector2(936, 456)
-scale = Vector2(-0.44, 0.439999)
+[node name="rightPdl" type="Sprite2D" parent="."]
+position = Vector2(2707, 968)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_7qc5p")
+script = ExtResource("4_l45tf")
