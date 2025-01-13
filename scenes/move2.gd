@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("sprite2_right") or Input.is_key_pressed(KEY_RIGHT):
 		position.x += speed * delta
 	if Input.is_action_pressed("sprite2_left") or Input.is_key_pressed(KEY_LEFT):
-		if position.x > get_tree().root.get_viewport().get_size().x/2.1:
+		if position.x > get_tree().root.get_viewport().get_size().x/1.8:
 			position.x -= speed * delta
 	if Input.is_action_pressed("sprite2_up") or Input.is_key_pressed(KEY_UP):
 		position.y -= speed * delta
