@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=6 format=3 uid="uid://ns6a2xtxjrqc"]
 
 [ext_resource type="Texture2D" uid="uid://cd1fxpuc7wmeu" path="res://AIR HOCKEY/2.png" id="1_ag4oi"]
+[ext_resource type="Texture2D" uid="uid://c7hx4cuy3i1aq" path="res://AIR HOCKEY/border.png" id="1_ccq4d"]
 [ext_resource type="Script" path="res://scenes/move.gd" id="2_tx3be"]
 [ext_resource type="Texture2D" uid="uid://byjn7kbkamoxh" path="res://AIR HOCKEY/3.png" id="3_7qc5p"]
 [ext_resource type="Script" path="res://scenes/move2.gd" id="4_l45tf"]
 
 [node name="map" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1535.5, 959.375)
+scale = Vector2(1.61632, 1.8072)
+texture = ExtResource("1_ccq4d")
+
 [node name="leftPdl" type="Sprite2D" parent="."]
-position = Vector2(355, 965)
+position = Vector2(400, 965)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_ag4oi")
 script = ExtResource("2_tx3be")
 
 [node name="rightPdl" type="Sprite2D" parent="."]
-position = Vector2(2707, 968)
+position = Vector2(2678, 968)
 scale = Vector2(0.52, 0.52)
 texture = ExtResource("3_7qc5p")
 script = ExtResource("4_l45tf")
