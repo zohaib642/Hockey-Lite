@@ -10,7 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("sprite1_right") or Input.is_key_pressed(KEY_D):
-		if position.x < get_tree().root.get_viewport().get_size().x/2.1:
+		if position.x < get_tree().root.get_viewport().get_size().x/2.3:
 			position.x += speed * delta
 	if Input.is_action_pressed("sprite1_left") or Input.is_key_pressed(KEY_A):
 		position.x -= speed * delta
