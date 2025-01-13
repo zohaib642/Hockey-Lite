@@ -15,6 +15,6 @@ script = ExtResource("2_tx3be")
 
 [node name="rightPdl" type="Sprite2D" parent="."]
 position = Vector2(2707, 968)
-scale = Vector2(0.55, 0.55)
+scale = Vector2(0.52, 0.52)
 texture = ExtResource("3_7qc5p")
 script = ExtResource("4_l45tf")
