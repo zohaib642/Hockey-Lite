@@ -8,22 +8,22 @@
 [ext_resource type="Script" path="res://scenes/move2.gd" id="4_l45tf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us131"]
-size = Vector2(3081, 20)
+size = Vector2(3081, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6n7o"]
-size = Vector2(20, 712)
+size = Vector2(45, 712)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8mm2"]
-size = Vector2(20, 716.5)
+size = Vector2(43, 716.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wdv4"]
-size = Vector2(20, 724)
+size = Vector2(45, 724)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvi26"]
-size = Vector2(20, 717)
+size = Vector2(43, 717)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hrfb"]
-size = Vector2(3075, 20)
+size = Vector2(3075, 49)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7yh1j"]
 radius = 126.254
@@ -51,27 +51,27 @@ script = ExtResource("4_l45tf")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1530.5, 0)
+position = Vector2(1530.5, 15)
 shape = SubResource("RectangleShape2D_us131")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 366)
+position = Vector2(12.5, 366)
 shape = SubResource("RectangleShape2D_h6n7o")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2, 1557.75)
+position = Vector2(13.5, 1557.75)
 shape = SubResource("RectangleShape2D_f8mm2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3072, 356)
+position = Vector2(3059.5, 356)
 shape = SubResource("RectangleShape2D_8wdv4")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3068, 1558.5)
+position = Vector2(3056.5, 1558.5)
 shape = SubResource("RectangleShape2D_lvi26")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1535.5, 1916)
+position = Vector2(1535.5, 1901.5)
 shape = SubResource("RectangleShape2D_0hrfb")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
