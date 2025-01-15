@@ -5,8 +5,8 @@ var motion = Vector2.ZERO
 
 func get_input():
 	var input_dir = Vector2(
-		Input.get_action_strength("pk1right") - Input.get_action_strength("pk1left"),
-		Input.get_action_strength("pk1down") - Input.get_action_strength("pk1up")
+		Input.get_action_strength("pk2right") - Input.get_action_strength("pk2left"),
+		Input.get_action_strength("pk2down") - Input.get_action_strength("pk2up")
 	)
 	motion = input_dir.normalized() * speed
 
