@@ -7,6 +7,9 @@ func get_input():
 	if !(position.x > -260):
 		speed = 0
 		position.x = position.x + 3
+	elif (position.x > 175 && (position.y > -60 && position.y < 60)):
+		speed = 0
+		position.x = position.x - 3
 	else:
 		speed = 25
 	var input_dir = Vector2(
