@@ -7,6 +7,9 @@ func get_input():
 	if !(position.x < 700):
 		speed = 0
 		position.x = position.x - 3
+	elif (position.x < 270 && (position.y > 870 && position.y < 990)):
+		speed = 0
+		position.x = position.x + 3
 	else:
 		speed = 25
 	var input_dir = Vector2(
@@ -18,4 +21,5 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_collide(motion)
+	print(position.x," ", position.y)
 	
