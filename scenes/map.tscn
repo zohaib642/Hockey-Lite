@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=18 format=3 uid="uid://ns6a2xtxjrqc"]
 
 [ext_resource type="Texture2D" uid="uid://cd1fxpuc7wmeu" path="res://AIR HOCKEY/2.png" id="1_ag4oi"]
 [ext_resource type="Texture2D" uid="uid://c7hx4cuy3i1aq" path="res://AIR HOCKEY/border.png" id="1_ccq4d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="4_ali1h"]
 [ext_resource type="Script" path="res://scenes/orange.gd" id="4_wirq4"]
 [ext_resource type="Texture2D" uid="uid://bwot3yphtq64y" path="res://AIR HOCKEY/puck.png" id="6_jtaqd"]
+[ext_resource type="Script" path="res://scenes/rigid_body_2d.gd" id="6_nodfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us131"]
 size = Vector2(1161, 24)
@@ -31,6 +32,8 @@ radius = 47.0956
 [sub_resource type="CircleShape2D" id="CircleShape2D_yn8lj"]
 radius = 47.0425
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wgw3v"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrel2"]
 radius = 26.0
 
@@ -41,33 +44,33 @@ position = Vector2(574.498, 325.376)
 scale = Vector2(0.604739, 0.613228)
 texture = ExtResource("1_ccq4d")
 
-[node name="border" type="StaticBody2D" parent="."]
+[node name="Border" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="border"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" groups=["walls"]]
 position = Vector2(570.5, 2)
 shape = SubResource("RectangleShape2D_us131")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="border"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border" groups=["walls"]]
 position = Vector2(2.5, 123.5)
 shape = SubResource("RectangleShape2D_h6n7o")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="border"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border" groups=["walls"]]
 position = Vector2(-1.75, 534)
 shape = SubResource("RectangleShape2D_f8mm2")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="border"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border" groups=["walls"]]
 position = Vector2(1147.25, 117.5)
 shape = SubResource("RectangleShape2D_8wdv4")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="border"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Border" groups=["walls"]]
 position = Vector2(1142.75, 538.75)
 shape = SubResource("RectangleShape2D_lvi26")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="border"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Border" groups=["walls"]]
 position = Vector2(576.5, 649.5)
 shape = SubResource("RectangleShape2D_0hrfb")
 
-[node name="blue" type="CharacterBody2D" parent="."]
+[node name="blue" type="CharacterBody2D" parent="." groups=["paddles"]]
 position = Vector2(422, 936)
 script = ExtResource("4_ali1h")
 
@@ -80,7 +83,7 @@ texture = ExtResource("1_ag4oi")
 position = Vector2(-199, -611)
 shape = SubResource("CircleShape2D_7yh1j")
 
-[node name="orange" type="CharacterBody2D" parent="."]
+[node name="orange" type="CharacterBody2D" parent="." groups=["paddles"]]
 script = ExtResource("4_wirq4")
 
 [node name="rightPdl" type="Sprite2D" parent="orange"]
@@ -92,13 +95,17 @@ texture = ExtResource("3_7qc5p")
 position = Vector2(904, 329)
 shape = SubResource("CircleShape2D_yn8lj")
 
-[node name="puck" type="CharacterBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_wgw3v")
+gravity_scale = 0.0
+script = ExtResource("6_nodfb")
 
-[node name="puckk" type="Sprite2D" parent="puck"]
+[node name="puckk" type="Sprite2D" parent="RigidBody2D"]
 position = Vector2(575, 321)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_jtaqd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puck"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(575, 322)
 shape = SubResource("CircleShape2D_jrel2")
