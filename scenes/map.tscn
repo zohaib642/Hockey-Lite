@@ -27,10 +27,10 @@ size = Vector2(16.5, 260.5)
 size = Vector2(1149, 25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7yh1j"]
-radius = 47.0956
+radius = 56.4358
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yn8lj"]
-radius = 47.0425
+radius = 59.2115
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wgw3v"]
 
@@ -76,11 +76,11 @@ script = ExtResource("4_ali1h")
 
 [node name="leftPdl" type="Sprite2D" parent="blue"]
 position = Vector2(-200, -612)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_ag4oi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blue"]
-position = Vector2(-199, -611)
+position = Vector2(-200, -613)
 shape = SubResource("CircleShape2D_7yh1j")
 
 [node name="orange" type="CharacterBody2D" parent="." groups=["paddles"]]
@@ -88,24 +88,24 @@ script = ExtResource("4_wirq4")
 
 [node name="rightPdl" type="Sprite2D" parent="orange"]
 position = Vector2(904, 329)
-scale = Vector2(0.17, 0.17)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("3_7qc5p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="orange"]
-position = Vector2(904, 329)
+position = Vector2(904, 330)
 shape = SubResource("CircleShape2D_yn8lj")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="puck" type="RigidBody2D" parent="."]
 mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_wgw3v")
 gravity_scale = 0.0
 script = ExtResource("6_nodfb")
 
-[node name="puckk" type="Sprite2D" parent="RigidBody2D"]
+[node name="puckk" type="Sprite2D" parent="puck"]
 position = Vector2(575, 321)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_jtaqd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puck"]
 position = Vector2(575, 322)
 shape = SubResource("CircleShape2D_jrel2")
