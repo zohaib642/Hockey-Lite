@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=19 format=3 uid="uid://ns6a2xtxjrqc"]
 
 [ext_resource type="Texture2D" uid="uid://cd1fxpuc7wmeu" path="res://AIR HOCKEY/2.png" id="1_ag4oi"]
 [ext_resource type="Texture2D" uid="uid://c7hx4cuy3i1aq" path="res://AIR HOCKEY/border.png" id="1_ccq4d"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/orange.gd" id="4_wirq4"]
 [ext_resource type="Texture2D" uid="uid://bwot3yphtq64y" path="res://AIR HOCKEY/puck.png" id="6_jtaqd"]
 [ext_resource type="Script" path="res://scenes/rigid_body_2d.gd" id="6_nodfb"]
+[ext_resource type="Script" path="res://scenes/label.gd" id="8_swcem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us131"]
 size = Vector2(1161, 24)
@@ -109,3 +110,12 @@ texture = ExtResource("6_jtaqd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puck"]
 position = Vector2(575, 322)
 shape = SubResource("CircleShape2D_jrel2")
+
+[node name="ScoreBlue" type="Label" parent="."]
+offset_left = 161.0
+offset_top = 55.0
+offset_right = 333.0
+offset_bottom = 166.0
+script = ExtResource("8_swcem")
+
+[connection signal="body_entered" from="puck" to="blue" method="_on_puck_body_entered"]

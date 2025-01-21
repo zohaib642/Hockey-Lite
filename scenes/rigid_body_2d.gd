@@ -18,27 +18,19 @@ func start_puck():
 	var angle = randf_range(0, 2 * PI)
 	linear_velocity = Vector2(cos(angle), sin(angle)) * speed
 
-func _integrate_forces(state):
-	
-	if linear_velocity != Vector2.ZERO:
+func _integrate_forces(_state):
+	# Maintain constant speed
+	if linear_velocity.length() != 0:
 		linear_velocity = linear_velocity.normalized() * speed
-	
-	for i in state.get_contact_count():
-		var collider = state.get_contact_collider_object(i)
-		var normal = state.get_contact_local_normal(i)
 		
-		if collider.is_in_group("paddles"):
-			var reflection = linear_velocity.reflect(normal)
-			var paddle_influence = collider.velocity.normalized() * (speed * 0.5)
-			linear_velocity = (reflection + paddle_influence).normalized() * speed
-			
-		elif collider.get_parent().name == "Border":
-			linear_velocity = linear_velocity.reflect(normal)
+	if position.x > 540 and abs(position.y) < 60:
+		reset_puck()
+		Global.scoreBlue += 1
+	elif position.x < -540 and abs(position.y) < 60:
+		reset_puck()
+		Global.scoreOrange += 1
 
-	if (position.x > 500 && (position.y > -60 && position.y < 60)):
-		reset_puck()
-	if (position.x < -500 && (position.y > -60 && position.y < 60)):
-		reset_puck()
+
 
 func reset_puck():
 	position.x = 0
