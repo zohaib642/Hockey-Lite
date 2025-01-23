@@ -4,10 +4,10 @@ var speed = 25
 var motion = Vector2.ZERO
 
 func get_input():
-	if !(position.x > -240):
+	if !(position.x > -250):
 		speed = 0
 		position.x = position.x + 3
-	elif (position.x > 155 && (position.y > -60 && position.y < 60)):
+	elif (position.x > 160 && (position.y > -60 && position.y < 60)):
 		speed = 0
 		position.x = position.x - 3
 	else:

@@ -24,11 +24,13 @@ func _integrate_forces(_state):
 		linear_velocity = linear_velocity.normalized() * speed
 		
 	if position.x > 540 and abs(position.y) < 60:
-		reset_puck()
 		Global.scoreBlue += 1
-	elif position.x < -540 and abs(position.y) < 60:
 		reset_puck()
+		print(Global.scoreBlue)
+	elif position.x < -540 and abs(position.y) < 60:
 		Global.scoreOrange += 1
+		reset_puck()
+		print(Global.scoreOrange)
 
 
 

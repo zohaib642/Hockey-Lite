@@ -1,8 +1,8 @@
 extends Label
 
-var previous_score_blue = -1
+var previous_score_orange = -1
 
 func _process(delta):
-	if Global.scoreBlue != previous_score_blue:
-		self.text = "Blue Score: " + str(Global.scoreBlue)
-		previous_score_blue = Global.scoreBlue
+	if Global.scoreOrange != previous_score_orange:
+		self.text = str(Global.scoreOrange)
+		previous_score_orange = Global.scoreOrange
