@@ -104,6 +104,7 @@ mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_wgw3v")
 gravity_scale = 0.0
 script = ExtResource("6_nodfb")
+speed = null
 
 [node name="puckk" type="Sprite2D" parent="puck"]
 position = Vector2(575, 321)

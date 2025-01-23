@@ -2,6 +2,7 @@ extends Node
 
 var scoreBlue = 0
 var scoreOrange = 0
+var winningScore = 7
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

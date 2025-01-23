@@ -26,13 +26,17 @@ func _integrate_forces(_state):
 	if position.x > 540 and abs(position.y) < 60:
 		Global.scoreBlue += 1
 		reset_puck()
-		print(Global.scoreBlue)
+		if Global.scoreBlue == 7:
+			winner("blue")
 	elif position.x < -540 and abs(position.y) < 60:
 		Global.scoreOrange += 1
 		reset_puck()
-		print(Global.scoreOrange)
+		if Global.scoreOrange == 7:
+			winner("orange")
+			
 
-
+func winner(winnerName):
+	
 
 func reset_puck():
 	position.x = 0
