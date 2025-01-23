@@ -36,7 +36,10 @@ func _integrate_forces(_state):
 			
 
 func winner(winnerName):
-	
+	if winnerName == "orange":
+		print("Orange wins!")
+	elif winnerName == "blue":
+		print("Blue wins!")
 
 func reset_puck():
 	position.x = 0
