@@ -23,23 +23,24 @@ func _integrate_forces(_state):
 	if linear_velocity.length() != 0:
 		linear_velocity = linear_velocity.normalized() * speed
 		
-	if position.x > 540 and abs(position.y) < 60:
+	if position.x > 540 and abs(position.y) < 70:
 		Global.scoreBlue += 1
-		reset_puck()
-		if Global.scoreBlue == 7:
+		if Global.scoreBlue == Global.winningScore:
 			winner("blue")
-	elif position.x < -540 and abs(position.y) < 60:
+		else:
+			reset_puck()
+	elif position.x < -540 and abs(position.y) < 70:
 		Global.scoreOrange += 1
-		reset_puck()
-		if Global.scoreOrange == 7:
+		if Global.scoreOrange == Global.winningScore:
 			winner("orange")
-			
+		else:
+			reset_puck()
 
 func winner(winnerName):
 	if winnerName == "orange":
-		print("Orange wins!")
+		get_tree().change_scene_to_file("res://scenes/game_overO.tscn")
 	elif winnerName == "blue":
-		print("Blue wins!")
+		get_tree().change_scene_to_file("res://scenes/game_overB.tscn")
 
 func reset_puck():
 	position.x = 0

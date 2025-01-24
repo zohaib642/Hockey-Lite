@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://6lk5wxa8ji4a"]
+
+[ext_resource type="Texture2D" uid="uid://bpxh16q00262k" path="res://A_black_image.jpg" id="1_dsmkg"]
+[ext_resource type="FontFile" uid="uid://cnef7u5gheo57" path="res://SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="2_7wfpq"]
+[ext_resource type="Script" path="res://scenes/button.gd" id="3_rejeb"]
+
+[sub_resource type="SystemFont" id="SystemFont_mk436"]
+
+[node name="GameOverO" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 44.0
+offset_right = 1124.0
+offset_bottom = 599.0
+theme_override_colors/font_color = Color(0.849602, 0.37184, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_mk436")
+theme_override_font_sizes/font_size = 170
+text = "Orange Wins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ABlackImage" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(592, 347)
+texture = ExtResource("1_dsmkg")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 508.0
+offset_right = 693.0
+offset_bottom = 599.0
+theme_override_fonts/font = ExtResource("2_7wfpq")
+theme_override_font_sizes/font_size = 20
+text = "Home"
+script = ExtResource("3_rejeb")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
