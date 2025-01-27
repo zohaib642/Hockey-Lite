@@ -9,19 +9,15 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
+offset_top = -20.0
 offset_right = 1151.0
-offset_bottom = 652.0
+offset_bottom = 632.0
 theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_31yh7")
 theme_override_font_sizes/font_size = 170
 text = "Blue Wins!"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ABlackImage" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(579, 330)
-texture = ExtResource("1_gjjle")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 456.0
@@ -32,5 +28,10 @@ theme_override_fonts/font = ExtResource("2_x1a1q")
 theme_override_font_sizes/font_size = 20
 text = "Home"
 script = ExtResource("3_8uqdq")
+
+[node name="ABlackImage" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(579, 330)
+texture = ExtResource("1_gjjle")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
