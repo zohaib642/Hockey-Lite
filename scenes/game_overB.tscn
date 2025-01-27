@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckf8tvu46mpf"]
+[gd_scene load_steps=4 format=3 uid="uid://ckf8tvu46mpf"]
 
 [ext_resource type="Texture2D" uid="uid://bpxh16q00262k" path="res://A_black_image.jpg" id="1_gjjle"]
-[ext_resource type="FontFile" uid="uid://cnef7u5gheo57" path="res://SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="2_x1a1q"]
+[ext_resource type="FontFile" uid="uid://2cxxb6q6wdkl" path="res://SmoochSans-VariableFont_wght.ttf" id="1_ucwtt"]
 [ext_resource type="Script" path="res://scenes/button.gd" id="3_8uqdq"]
-
-[sub_resource type="SystemFont" id="SystemFont_31yh7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,7 +11,7 @@ offset_top = -20.0
 offset_right = 1151.0
 offset_bottom = 632.0
 theme_override_colors/font_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_31yh7")
+theme_override_fonts/font = ExtResource("1_ucwtt")
 theme_override_font_sizes/font_size = 170
 text = "Blue Wins!"
 horizontal_alignment = 1
@@ -21,17 +19,17 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 offset_left = 456.0
-offset_top = 503.0
+offset_top = 465.0
 offset_right = 693.0
-offset_bottom = 594.0
-theme_override_fonts/font = ExtResource("2_x1a1q")
-theme_override_font_sizes/font_size = 20
+offset_bottom = 556.0
+theme_override_fonts/font = ExtResource("1_ucwtt")
+theme_override_font_sizes/font_size = 30
 text = "Home"
 script = ExtResource("3_8uqdq")
 
 [node name="ABlackImage" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(579, 330)
+position = Vector2(577, 358)
 texture = ExtResource("1_gjjle")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
