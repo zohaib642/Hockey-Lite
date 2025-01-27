@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://6lk5wxa8ji4a"]
+[gd_scene load_steps=5 format=3 uid="uid://6lk5wxa8ji4a"]
 
 [ext_resource type="Texture2D" uid="uid://bpxh16q00262k" path="res://A_black_image.jpg" id="1_dsmkg"]
 [ext_resource type="FontFile" uid="uid://2cxxb6q6wdkl" path="res://SmoochSans-VariableFont_wght.ttf" id="1_ivkmv"]
 [ext_resource type="Script" path="res://scenes/button.gd" id="3_rejeb"]
+
+[sub_resource type="FontVariation" id="FontVariation_afbgd"]
+base_font = ExtResource("1_ivkmv")
+variation_embolden = 0.5
 
 [node name="GameOverO" type="Node2D"]
 position = Vector2(0, -20)
@@ -13,7 +17,7 @@ offset_top = 44.0
 offset_right = 1124.0
 offset_bottom = 599.0
 theme_override_colors/font_color = Color(0.849602, 0.37184, 0, 1)
-theme_override_fonts/font = ExtResource("1_ivkmv")
+theme_override_fonts/font = SubResource("FontVariation_afbgd")
 theme_override_font_sizes/font_size = 170
 text = "Orange Wins!"
 horizontal_alignment = 1

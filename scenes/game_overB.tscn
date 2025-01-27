@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckf8tvu46mpf"]
+[gd_scene load_steps=6 format=3 uid="uid://ckf8tvu46mpf"]
 
 [ext_resource type="Texture2D" uid="uid://bpxh16q00262k" path="res://A_black_image.jpg" id="1_gjjle"]
 [ext_resource type="FontFile" uid="uid://2cxxb6q6wdkl" path="res://SmoochSans-VariableFont_wght.ttf" id="1_ucwtt"]
 [ext_resource type="Script" path="res://scenes/button.gd" id="3_8uqdq"]
+
+[sub_resource type="FontVariation" id="FontVariation_uioxc"]
+base_font = ExtResource("1_ucwtt")
+variation_embolden = 0.5
+
+[sub_resource type="FontVariation" id="FontVariation_u5f5u"]
+base_font = ExtResource("1_ucwtt")
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,7 +18,7 @@ offset_top = -20.0
 offset_right = 1151.0
 offset_bottom = 632.0
 theme_override_colors/font_color = Color(0, 0, 1, 1)
-theme_override_fonts/font = ExtResource("1_ucwtt")
+theme_override_fonts/font = SubResource("FontVariation_uioxc")
 theme_override_font_sizes/font_size = 170
 text = "Blue Wins!"
 horizontal_alignment = 1
@@ -22,7 +29,7 @@ offset_left = 456.0
 offset_top = 465.0
 offset_right = 693.0
 offset_bottom = 556.0
-theme_override_fonts/font = ExtResource("1_ucwtt")
+theme_override_fonts/font = SubResource("FontVariation_u5f5u")
 theme_override_font_sizes/font_size = 30
 text = "Home"
 script = ExtResource("3_8uqdq")
