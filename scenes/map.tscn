@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=22 format=3 uid="uid://ns6a2xtxjrqc"]
 
 [ext_resource type="Texture2D" uid="uid://cd1fxpuc7wmeu" path="res://AIR HOCKEY/2.png" id="1_ag4oi"]
 [ext_resource type="Texture2D" uid="uid://c7hx4cuy3i1aq" path="res://AIR HOCKEY/border.png" id="1_ccq4d"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/rigid_body_2d.gd" id="6_nodfb"]
 [ext_resource type="Script" path="res://scenes/score_blue.gd" id="8_f671j"]
 [ext_resource type="Script" path="res://scenes/label.gd" id="8_swcem"]
+[ext_resource type="AudioStream" uid="uid://cyhiod3vhm5xm" path="res://Taketones_TheWay Up.wav" id="10_65jva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us131"]
 size = Vector2(1161, 24)
@@ -133,5 +134,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.223529)
 theme_override_fonts/font = SubResource("SystemFont_stnk4")
 theme_override_font_sizes/font_size = 200
 script = ExtResource("8_swcem")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_65jva")
+autoplay = true
 
 [connection signal="body_entered" from="puck" to="blue" method="_on_puck_body_entered"]

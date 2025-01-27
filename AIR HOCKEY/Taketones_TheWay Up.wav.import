@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgub47f7d4p4e"
+path="res://.godot/imported/Taketones_TheWay Up.wav-307a00ce72ccad0ef7350cce6340a3b4.sample"
+
+[deps]
+
+source_file="res://AIR HOCKEY/Taketones_TheWay Up.wav"
+dest_files=["res://.godot/imported/Taketones_TheWay Up.wav-307a00ce72ccad0ef7350cce6340a3b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
