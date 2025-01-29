@@ -26,14 +26,14 @@ func _integrate_forces(_state):
 	if linear_velocity.length() != 0:
 		linear_velocity = linear_velocity.normalized() * speed
 		
-	if position.x > 540 and abs(position.y) < 70:
+	if position.x > 540 and abs(position.y) < 65:
 		Global.scoreBlue += 1
 		$goalsound.play()
 		if Global.scoreBlue == Global.winningScore:
 			winner("blue")
 		else:
 			reset_puck()
-	elif position.x < -540 and abs(position.y) < 70:
+	elif position.x < -540 and abs(position.y) < 65:
 		Global.scoreOrange += 1
 		$goalsound.play()
 		if Global.scoreOrange == Global.winningScore:
