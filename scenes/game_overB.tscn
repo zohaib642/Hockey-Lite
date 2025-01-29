@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckf8tvu46mpf"]
+[gd_scene load_steps=7 format=3 uid="uid://ckf8tvu46mpf"]
 
 [ext_resource type="Texture2D" uid="uid://bpxh16q00262k" path="res://A_black_image.jpg" id="1_gjjle"]
 [ext_resource type="FontFile" uid="uid://2cxxb6q6wdkl" path="res://SmoochSans-VariableFont_wght.ttf" id="1_ucwtt"]
 [ext_resource type="Script" path="res://scenes/button.gd" id="3_8uqdq"]
+[ext_resource type="AudioStream" uid="uid://dx1fhlf8p76cg" path="res://sound effects/You win sound effect 5 [ ezmp3.cc ].mp3" id="4_un1vm"]
 
 [sub_resource type="FontVariation" id="FontVariation_uioxc"]
 base_font = ExtResource("1_ucwtt")
@@ -38,5 +39,9 @@ script = ExtResource("3_8uqdq")
 z_index = -1
 position = Vector2(577, 358)
 texture = ExtResource("1_gjjle")
+
+[node name="winsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_un1vm")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

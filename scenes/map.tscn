@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ns6a2xtxjrqc"]
+[gd_scene load_steps=24 format=3 uid="uid://ns6a2xtxjrqc"]
 
 [ext_resource type="Texture2D" uid="uid://cd1fxpuc7wmeu" path="res://AIR HOCKEY/2.png" id="1_ag4oi"]
 [ext_resource type="Texture2D" uid="uid://c7hx4cuy3i1aq" path="res://AIR HOCKEY/border.png" id="1_ccq4d"]
@@ -7,8 +7,10 @@
 [ext_resource type="Script" path="res://scenes/orange.gd" id="4_wirq4"]
 [ext_resource type="Texture2D" uid="uid://bwot3yphtq64y" path="res://AIR HOCKEY/puck.png" id="6_jtaqd"]
 [ext_resource type="Script" path="res://scenes/rigid_body_2d.gd" id="6_nodfb"]
+[ext_resource type="AudioStream" uid="uid://c4w4hu30axavw" path="res://sound effects/hit.wav" id="8_8wr2n"]
 [ext_resource type="Script" path="res://scenes/score_blue.gd" id="8_f671j"]
 [ext_resource type="Script" path="res://scenes/label.gd" id="8_swcem"]
+[ext_resource type="AudioStream" uid="uid://1ibfnkgbqh4w" path="res://sound effects/goal.wav" id="9_8e3r4"]
 [ext_resource type="AudioStream" uid="uid://cyhiod3vhm5xm" path="res://Taketones_TheWay Up.wav" id="10_65jva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us131"]
@@ -104,6 +106,8 @@ shape = SubResource("CircleShape2D_yn8lj")
 mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_wgw3v")
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 2
 script = ExtResource("6_nodfb")
 
 [node name="puckk" type="Sprite2D" parent="puck"]
@@ -114,6 +118,13 @@ texture = ExtResource("6_jtaqd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puck"]
 position = Vector2(575, 322)
 shape = SubResource("CircleShape2D_jrel2")
+
+[node name="pucksound" type="AudioStreamPlayer2D" parent="puck"]
+stream = ExtResource("8_8wr2n")
+volume_db = -10.0
+
+[node name="goalsound" type="AudioStreamPlayer2D" parent="puck"]
+stream = ExtResource("9_8e3r4")
 
 [node name="ScoreBlue" type="Label" parent="."]
 offset_left = 424.0
@@ -137,6 +148,7 @@ script = ExtResource("8_swcem")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_65jva")
+volume_db = -17.333
 autoplay = true
 
-[connection signal="body_entered" from="puck" to="blue" method="_on_puck_body_entered"]
+[connection signal="body_entered" from="puck" to="puck" method="_on_body_entered"]

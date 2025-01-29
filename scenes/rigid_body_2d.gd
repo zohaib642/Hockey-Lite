@@ -1,16 +1,19 @@
 extends RigidBody2D
 
 @export var speed = 800.0
+@export var character_to_sound_map: Dictionary = {}
 
 var physics_material = PhysicsMaterial.new()
 
 func _ready():
+	
 	gravity_scale = 0.0
 	linear_damp = 0
 	angular_damp = 1
 	physics_material.friction = 0.0
 	physics_material.bounce = 1.0
 	physics_material_override = physics_material
+	body_entered.connect(_on_body_entered)
 	
 	start_puck()
 
@@ -25,14 +28,16 @@ func _integrate_forces(_state):
 		
 	if position.x > 540 and abs(position.y) < 70:
 		Global.scoreBlue += 1
+		$goalsound.play()
 		if Global.scoreBlue == Global.winningScore:
 			winner("blue")
 		else:
 			reset_puck()
 	elif position.x < -540 and abs(position.y) < 70:
 		Global.scoreOrange += 1
+		$goalsound.play()
 		if Global.scoreOrange == Global.winningScore:
-			winner("orange")
+			winner("orange")	
 		else:
 			reset_puck()
 
@@ -46,3 +51,9 @@ func reset_puck():
 	position.x = 0
 	position.y = 0
 	start_puck()
+
+func _on_body_entered(body: Node):
+	# Check if the colliding body is a paddle
+	if body.is_in_group("paddles"):
+		$pucksound.pitch_scale = randf_range(0.95, 1.05)
+		$pucksound.play()  # Play the sound

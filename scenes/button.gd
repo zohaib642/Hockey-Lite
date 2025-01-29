@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	Global.scoreBlue = 0
 	Global.scoreOrange = 0
+	Global.winningScore = 7
 	get_tree().change_scene_to_file("res://scenes/home_screen.tscn")
