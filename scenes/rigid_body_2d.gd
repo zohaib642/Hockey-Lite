@@ -19,7 +19,7 @@ func _ready():
 
 func start_puck():
 	
-	linear_velocity = Vector2(0,0)
+
 	await get_tree().create_timer(1.5).timeout
 	
 	var angle = randf_range(0, 2 * PI)
