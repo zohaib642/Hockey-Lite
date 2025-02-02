@@ -19,14 +19,10 @@ func _ready():
 
 func start_puck():
 	
-
-	await get_tree().create_timer(1.5).timeout
-	
 	var angle = randf_range(0, 2 * PI)
 	linear_velocity = Vector2(cos(angle), sin(angle)) * speed
 
 func _integrate_forces(_state):
-	# Maintain constant speed
 	if linear_velocity.length() != 0:
 		linear_velocity = linear_velocity.normalized() * speed
 		
@@ -54,6 +50,7 @@ func winner(winnerName):
 func reset_puck():
 	position.x = 0
 	position.y = 0
+	
 	start_puck()
 
 func _on_body_entered(body: Node):
