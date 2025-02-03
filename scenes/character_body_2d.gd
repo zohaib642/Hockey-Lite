@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 12
+var speed = 15
 var motion = Vector2.ZERO
 
 func get_input():
@@ -11,7 +11,7 @@ func get_input():
 		speed = 0
 		position.x = position.x + 3
 	else:
-		speed = 12
+		speed = 15
 	var input_dir = Vector2(
 		Input.get_action_strength("pk1right") - Input.get_action_strength("pk1left"),
 		Input.get_action_strength("pk1down") - Input.get_action_strength("pk1up")

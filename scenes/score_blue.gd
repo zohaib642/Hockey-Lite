@@ -1,8 +1,8 @@
 extends Label
 
-func _ready():
-	Global.connect("score_changed", self._on_score_changed)
-	self.text = str(Global.scoreBlue)
+var previous_score_blue = -1
 
-func _on_score_changed(new_score):
-	self.text = str(new_score)
+func _process(delta):
+	if Global.scoreBlue != previous_score_blue:
+		self.text = str(Global.scoreBlue)
+		previous_score_blue = Global.scoreBlue

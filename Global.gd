@@ -1,17 +1,14 @@
 extends Node
+
+var scoreBlue = 0
+var scoreOrange = 0
 var winningScore = 7
 
-signal score_changed(new_score)
-signal score2_changed(new2_score)
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
 
-var scoreBlue = 0:
-	set(value):
-		if scoreBlue != value:
-			scoreBlue = value
-			emit_signal("score_changed", scoreBlue)
-			
-var scoreOrange = 0:
-	set(val):
-		if scoreOrange != val:
-			scoreOrange = val
-			emit_signal("score2_changed", scoreOrange)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
