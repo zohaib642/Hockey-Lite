@@ -53,7 +53,6 @@ func reset_puck():
 	start_puck()
 
 func _on_body_entered(body: Node):
-	# Check if the colliding body is a paddle
 	if body.is_in_group("paddles"):
 		$pucksound.pitch_scale = randf_range(0.95, 1.05)
-		$pucksound.play()  # Play the sound
+		$pucksound.play()
